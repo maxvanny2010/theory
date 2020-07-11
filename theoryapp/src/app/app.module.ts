@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MeComponent} from "./me/me.component";
 import { MiComponent } from './mi/mi.component';
+import { CarsComponent } from './cars/cars.component';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeComponent,
-    MiComponent
+    MiComponent,
+    CarsComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
