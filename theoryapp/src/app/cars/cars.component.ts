@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
- // selector: 'app-cars', //level selector
- // selector: '[app-cars]', //level tag
+  // selector: 'app-cars', //level selector
+  // selector: '[app-cars]', //level tag
   selector: '.app-cars', //level class
   templateUrl: './cars.component.html',
   styles: [`
@@ -12,12 +12,12 @@ import {Component, OnInit} from '@angular/core';
     }
   `]
 })
-export class CarsComponent implements OnInit {
+export class CarsComponent {
+  canAddCar = false;
 
   constructor() {
+    setTimeout(() => {
+      this.canAddCar = true;
+    }, 4000);
   }
-
-  ngOnInit(): void {
-  }
-
 }
