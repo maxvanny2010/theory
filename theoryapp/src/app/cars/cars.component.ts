@@ -13,11 +13,34 @@ import {Component} from '@angular/core';
   `]
 })
 export class CarsComponent {
-  canAddCar = false;
+  addCarStatus = '';
+  inputText = '';
 
   constructor() {
-    setTimeout(() => {
-      this.canAddCar = true;
-    }, 4000);
+  }
+
+  onKeyUps(value: string) {
+    return this.inputText = value;
+  }
+
+  onKeyUp($event: Event) {
+    /*console.log($event);*/
+    this.inputText = (<HTMLInputElement>$event.target).value;
+  }
+
+  addCar() {
+    return this.addCarStatus = 'Машина добавлена';
+  }
+
+  /*canAddCar = false;
+   constructor() {
+     setTimeout(() => {
+       this.canAddCar = true;
+     }, 4000);
+   }*/
+  onKeyUpEnter(event) {
+    if (event.keyKode === 'Enter') {
+      this.inputText = event.target.value;
+    }
   }
 }

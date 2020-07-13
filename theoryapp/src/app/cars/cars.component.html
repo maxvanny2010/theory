@@ -1,7 +1,24 @@
 <!--<p>cars in table</p>-->
-<button [disabled]="!canAddCar" class="btn btn-primary">Добавить машину</button>
-<hr>
-<button disabled="{{!canAddCar}}" class="btn btn-primary">Добавить машину</button>
+<!--<button [disabled]="!canAddCar" class="btn btn-primary">Добавить машину</button>-->
+<!--<hr>-->
+<!--<button disabled="{{!canAddCar}}" class="btn btn-primary">Добавить машину</button>-->
+
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<p>{{ addCarStatus}}</p>
 <hr>
 <app-car></app-car>
 <app-car></app-car>
+<hr>
+<label>
+  <!--keyup input-->
+  <input type="text" class="form-control" (keyup)="onKeyUp($event)">
+  <!--input without delay-->
+  <input type="text" class="form-control" (input)="onKeyUp($event)">
+  <!--my event input-->
+  <input type="text" class="form-control" #myInp (input)="onKeyUps(myInp.value)">
+  <!--my event key enter-->
+  <input type="text" class="form-control" (input)="onKeyUpEnter($event)">
+  <!--keyup enter-->
+  <input type="text" class="form-control" (keyup.enter)="onKeyUp($event)">
+</label>
+<p>{{inputText}}</p>
