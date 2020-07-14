@@ -16,3 +16,12 @@
     <b>{{idx + 1}}</b> - <i>{{item.name}}</i>
   </li>
 </ul>
+<ul>
+  <li *ngFor="let car of cars;let idx = index">
+    <div
+      [ngStyle]="{backgroundColor:(idx+1) % 2 !== 0 ? 'red':'transient','color':'white'}"
+      [ngClass]="{'big-text': setBigCarText(car)}"
+    >
+      <b>{{idx + 1}}</b> - <i>{{car}}</i></div>
+  </li>
+</ul>
