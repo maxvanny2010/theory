@@ -9,6 +9,7 @@ import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import {FormsModule} from "@angular/forms";
 import { IfelseComponent } from './ifelse/ifelse.component';
+import { ForComponent } from './for/for.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { IfelseComponent } from './ifelse/ifelse.component';
     MiComponent,
     CarsComponent,
     CarComponent,
-    IfelseComponent
+    IfelseComponent,
+    ForComponent
   ],
     imports: [
         BrowserModule,
