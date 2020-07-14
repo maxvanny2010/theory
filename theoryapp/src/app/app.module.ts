@@ -8,6 +8,7 @@ import { MiComponent } from './mi/mi.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import {FormsModule} from "@angular/forms";
+import { IfelseComponent } from './ifelse/ifelse.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {FormsModule} from "@angular/forms";
     MeComponent,
     MiComponent,
     CarsComponent,
-    CarComponent
+    CarComponent,
+    IfelseComponent
   ],
     imports: [
         BrowserModule,

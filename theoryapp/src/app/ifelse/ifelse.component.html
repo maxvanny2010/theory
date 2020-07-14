@@ -1,0 +1,7 @@
+<label>
+  <input type="text" class="form-control" [(ngModel)]="carName">
+</label>
+<hr>
+<button class="btn btn-primary" (click)="setCarStatus()">Добавить машину</button>
+<p *ngIf="!addCarStatus; else references">Машина не добавлена</p>
+<ng-template #references><p>Машина добавлена</p></ng-template>
