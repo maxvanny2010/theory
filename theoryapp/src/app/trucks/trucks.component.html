@@ -1,0 +1,6 @@
+<input type="text" class="form-control" [(ngModel)]="truckName">
+<input type="text" class="form-control" [(ngModel)]="truckYear">
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<hr>
+<!--[]-->
+<app-truck *ngFor="let truck of trucks" [truckItem]="truck"></app-truck>
