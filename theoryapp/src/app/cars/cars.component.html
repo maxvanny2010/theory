@@ -20,5 +20,8 @@
   <input type="text" class="form-control" (input)="onKeyUpEnter($event)">
   <!--keyup enter-->
   <input type="text" class="form-control" (keyup.enter)="onKeyUp($event)">
+
+  <input type="text" class="form-control" [(ngModel)]="inputText">
+
 </label>
 <p>{{inputText}}</p>
