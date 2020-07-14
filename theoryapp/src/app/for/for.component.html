@@ -1,10 +1,14 @@
+<!--ngModel-->
 <label>
   <input type="text" class="form-control" [(ngModel)]="carName">
 </label>
 <hr>
+<!--click-->
 <button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<!--*ngIf-->
 <p *ngIf="!addCarStatus; else references">Машина не добавлена</p>
 <ng-template #references><p>Машина добавлена</p></ng-template>
+<!--*ngFor-->
 <app-car *ngFor="let car of cars"></app-car>
 <ul>
   <li *ngFor="let item of items">
@@ -16,6 +20,7 @@
     <b>{{idx + 1}}</b> - <i>{{item.name}}</i>
   </li>
 </ul>
+<!--ngStyle ngClass-->
 <ul>
   <li *ngFor="let car of cars;let idx = index">
     <div
@@ -23,5 +28,13 @@
       [ngClass]="{'big-text': setBigCarText(car)}"
     >
       <b>{{idx + 1}}</b> - <i>{{car}}</i></div>
+  </li>
+  <!--pipes-->
+</ul>
+<ul>
+  <li *ngFor="let date of dates;let idx = index">
+    <div>
+      <!--date:'short'|'medium'| uppercase-->
+      <b>{{idx + 1}}</b> - <i>{{date | date | uppercase}}</i></div>
   </li>
 </ul>

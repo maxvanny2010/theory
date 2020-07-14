@@ -8,8 +8,14 @@ import {Component} from '@angular/core';
 export class ForComponent {
   carName = '';
   addCarStatus = false;
-  cars = ['Ford', 'Audi', 'BMW','Bentley'];
+  cars = ['Ford', 'Audi', 'BMW', 'Bentley'];
   items = [{id: 3, name: 'item 1'}, {id: 6, name: 'item 2'}, {id: 6, name: 'item 3'}];
+  dates = [
+    new Date(2020, 1, 1).toDateString(),
+    new Date(2020, 1, 2).toDateString(),
+    new Date(2020, 1, 3).toDateString(),
+    new Date(2020, 1, 4).toDateString(),
+  ]
 
   constructor() {
   }
@@ -20,7 +26,7 @@ export class ForComponent {
     this.carName = '';
   }
 
-  setBigCarText(car: string){
+  setBigCarText(car: string) {
     return car.length < 4;
   }
 }
