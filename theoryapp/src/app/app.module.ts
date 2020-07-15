@@ -12,6 +12,9 @@ import { IfelseComponent } from './ifelse/ifelse.component';
 import { ForComponent } from './for/for.component';
 import { TrucksComponent } from './trucks/trucks.component';
 import { TruckComponent } from './truck/truck.component';
+import { FlyComponent } from './fly/fly.component';
+import { FliesComponent } from './flies/flies.component';
+import { AddFlyComponent } from './add-fly/add-fly.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { TruckComponent } from './truck/truck.component';
     IfelseComponent,
     ForComponent,
     TrucksComponent,
-    TruckComponent
+    TruckComponent,
+    FlyComponent,
+    FliesComponent,
+    AddFlyComponent
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,3 @@
+<app-add-fly (ListenerOuterEvent)="addFliesByEvent($event)"></app-add-fly>
+<hr>
+<app-fly *ngFor="let fly of flies" [flyItem]="fly"></app-fly>
