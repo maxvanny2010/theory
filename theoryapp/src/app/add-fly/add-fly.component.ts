@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-add-fly',
@@ -6,20 +6,19 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./add-fly.component.css']
 })
 export class AddFlyComponent {
-  flyName = '';
-  flyYear = 2020;
   @Output('ListenerOuterEvent') listener = new EventEmitter<{ name: string, year: number }>();
+  @ViewChild('yearLocalReference') yearReference: ElementRef;
 
   constructor() {
   }
 
-  addFly() {
+  addFly(flyLocalReference: HTMLInputElement) {
     this.listener.emit({
-      name: this.flyName,
-      year: this.flyYear
+      name: flyLocalReference.value,
+      year: +this.yearReference.nativeElement.value
     });
-    this.flyName = '';
-    this.flyYear = 2020;
+    flyLocalReference.value = '';
+    this.yearReference.nativeElement.value = 2020;
   }
 
 }

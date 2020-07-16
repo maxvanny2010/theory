@@ -1,3 +1,3 @@
-<input type="text" class="form-control" [(ngModel)]="flyName">
-<input type="text" class="form-control" [(ngModel)]="flyYear">
-<button class="btn btn-primary" (click)="addFly()">Добавить машину</button>
+<input type="text" class="form-control" #nameLocalReference>
+<input type="text" class="form-control" #yearLocalReference>
+<button class="btn btn-primary" (click)="addFly(nameLocalReference)">Добавить машину</button>
