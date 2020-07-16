@@ -27,9 +27,9 @@ import { AddFlyComponent } from './add-fly/add-fly.component';
     ForComponent,
     TrucksComponent,
     TruckComponent,
-    FlyComponent,
     FliesComponent,
-    AddFlyComponent
+    AddFlyComponent,
+    FlyComponent
   ],
     imports: [
         BrowserModule,

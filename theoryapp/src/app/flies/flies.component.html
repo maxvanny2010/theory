@@ -4,7 +4,7 @@
 <hr>
 <div class="list-group">
   <app-fly class="list-group-item" *ngFor="let fly of flies" [flyItem]="fly">
-    <h6 class="list-group-item-heading">Название: {{ fly.name}}</h6>
+    <h6 class="list-group-item-heading" #outputRef>Название: {{ fly.name}}</h6>
     <p class="list-group-item-text">Год: {{ fly.year}}</p>
   </app-fly>
 </div>
