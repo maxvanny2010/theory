@@ -2,8 +2,12 @@
 <hr>
 <app-add-fly (ListenerOuterEvent)="addFliesByEvent($event)"></app-add-fly>
 <hr>
+
+<button class="btn btn-success" (click)="changeCarName()">Изменить имя машины</button>
+<button class="btn btn-danger" (click)="deleteCar()">Удалить машины</button>
+<hr>
 <div class="list-group">
-  <app-fly class="list-group-item" *ngFor="let fly of flies" [flyItem]="fly">
+  <app-fly class="list-group-item" *ngFor="let fly of flies" [flyItem]="fly" [name]="fly.name">
     <h6 class="list-group-item-heading" #outputRef>Название: {{ fly.name}}</h6>
     <p class="list-group-item-text">Год: {{ fly.year}}</p>
   </app-fly>
