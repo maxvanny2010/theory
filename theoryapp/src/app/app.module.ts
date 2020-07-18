@@ -15,6 +15,8 @@ import { TruckComponent } from './truck/truck.component';
 import { FlyComponent } from './fly/fly.component';
 import { FliesComponent } from './flies/flies.component';
 import { AddFlyComponent } from './add-fly/add-fly.component';
+import { MyDirectiveDirective } from './directives/my-directive.directive';
+import { DirectComponent } from './direct/direct.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { AddFlyComponent } from './add-fly/add-fly.component';
     TruckComponent,
     FliesComponent,
     AddFlyComponent,
-    FlyComponent
+    FlyComponent,
+    MyDirectiveDirective,
+    DirectComponent
   ],
     imports: [
         BrowserModule,
