@@ -17,6 +17,7 @@ import { FliesComponent } from './flies/flies.component';
 import { AddFlyComponent } from './add-fly/add-fly.component';
 import { MyDirectiveDirective } from './directives/my-directive.directive';
 import { DirectComponent } from './direct/direct.component';
+import { SwithComponent } from './swith/swith.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DirectComponent } from './direct/direct.component';
     AddFlyComponent,
     FlyComponent,
     MyDirectiveDirective,
-    DirectComponent
+    DirectComponent,
+    SwithComponent
   ],
     imports: [
         BrowserModule,
