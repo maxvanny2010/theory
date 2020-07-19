@@ -19,6 +19,8 @@ import { MyDirectiveDirective } from './directives/my-directive.directive';
 import { DirectComponent } from './direct/direct.component';
 import { SwithComponent } from './swith/swith.component';
 import { PipeComponent } from './pipe/pipe.component';
+import {MypipeComponent} from "./mypipe/mypipe.component";
+import {PowPipe} from "./mypipe/pow.pipe";
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { PipeComponent } from './pipe/pipe.component';
     MyDirectiveDirective,
     DirectComponent,
     SwithComponent,
-    PipeComponent
+    PipeComponent,
+    MypipeComponent,
+    PowPipe
   ],
     imports: [
         BrowserModule,
