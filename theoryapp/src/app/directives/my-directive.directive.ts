@@ -1,4 +1,4 @@
-import {Directive, ElementRef, HostBinding, HostListener, OnInit, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[appMyDirective]'
@@ -9,6 +9,7 @@ export class MyDirectiveDirective implements OnInit {
   }
 
   ngOnInit(): void {
+    this.background = this.defColor;
     console.log(this.element);
     /*LEVEL 0*/
     /*   const {nativeElement} = this.element;
@@ -39,13 +40,26 @@ export class MyDirectiveDirective implements OnInit {
   @HostBinding('style.backgroundColor') background: string;
   @HostBinding('style.color') color: string;
 
-  @HostListener('mouseenter') mouseEnter() {
+/*  @HostListener('mouseenter') mouseEnter() {
     this.background = 'red';
     this.color = 'white';
   }
 
   @HostListener('mouseleave') mouseLeave() {
     this.background = 'transparent';
+    this.color = 'black';
+  }*/
+
+  @Input('appMyDirective') hoverColor: string = 'green';
+  @Input('defColor') defColor: string = 'transparent';
+
+  @HostListener('mouseenter') mouseEnters() {
+    this.background = this.hoverColor;
+    this.color = 'green';
+  }
+
+  @HostListener('mouseleave') mouseLeaves() {
+    this.background = this.defColor;
     this.color = 'black';
   }
 }
