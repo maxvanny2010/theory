@@ -21,6 +21,7 @@ import { SwithComponent } from './swith/swith.component';
 import { PipeComponent } from './pipe/pipe.component';
 import {MypipeComponent} from "./mypipe/mypipe.component";
 import {PowPipe} from "./mypipe/pow.pipe";
+import { DynamicFilterPipe } from './mypipe/dynamicFilter.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {PowPipe} from "./mypipe/pow.pipe";
     SwithComponent,
     PipeComponent,
     MypipeComponent,
-    PowPipe
+    PowPipe,
+    DynamicFilterPipe
   ],
     imports: [
         BrowserModule,
