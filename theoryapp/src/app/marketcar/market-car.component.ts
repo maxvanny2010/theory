@@ -1,12 +1,17 @@
 import {Component, Input} from '@angular/core';
+import {ConsoleService} from "../market/console.service";
 
 @Component({
   selector: 'app-market-car',
   templateUrl: './market-car.component.html',
-  styleUrls: ['./market-car.component.css']
+  styleUrls: ['./market-car.component.css'],
+  providers: [ConsoleService]
 })
 export class MarketCarComponent {
   @Input() car;
+
+  constructor(private service: ConsoleService) {
+  }
 
   getClass() {
     return {
@@ -18,5 +23,6 @@ export class MarketCarComponent {
 
   onAction(type: string) {
     this.car.isSold = type === 'buy';
+    this.service.log(`${this.car.name} status = ${type}`)
   }
 }
