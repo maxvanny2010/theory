@@ -26,6 +26,7 @@ import {MarketCarComponent} from './marketcar/market-car.component';
 import {MarketCarAddComponent} from './marketcar-add/market-car-add.component';
 import {MarketComponent} from './market/market.component';
 import {CarService} from "./market/car.service";
+import {ConsoleService} from "./market/console.service";
 
 @NgModule({
   declarations: [
@@ -52,12 +53,13 @@ import {CarService} from "./market/car.service";
     MarketCarAddComponent,
     MarketComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
-    ],
-  providers: [CarService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [CarService, ConsoleService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

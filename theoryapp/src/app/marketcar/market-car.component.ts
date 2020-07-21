@@ -4,8 +4,7 @@ import {ConsoleService} from "../market/console.service";
 @Component({
   selector: 'app-market-car',
   templateUrl: './market-car.component.html',
-  styleUrls: ['./market-car.component.css'],
-  providers: [ConsoleService]
+  styleUrls: ['./market-car.component.css']
 })
 export class MarketCarComponent {
   @Input() car;
