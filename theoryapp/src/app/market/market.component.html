@@ -1,0 +1,6 @@
+<div class="col-md-12 offset-2">
+  <app-market-car-add (onCarAdd)="addCarToList($event)"></app-market-car-add>
+  <div class="list-group">
+    <app-market-car *ngFor="let car of cars" [car]="car"></app-market-car>
+  </div>
+</div>

@@ -22,6 +22,9 @@ import { PipeComponent } from './pipe/pipe.component';
 import {MypipeComponent} from "./mypipe/mypipe.component";
 import {PowPipe} from "./mypipe/pow.pipe";
 import { DynamicFilterPipe } from './mypipe/dynamicFilter.pipe';
+import { MarketCarComponent } from './marketcar/market-car.component';
+import { MarketCarAddComponent } from './marketcar-add/market-car-add.component';
+import { MarketComponent } from './market/market.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { DynamicFilterPipe } from './mypipe/dynamicFilter.pipe';
     PipeComponent,
     MypipeComponent,
     PowPipe,
-    DynamicFilterPipe
+    DynamicFilterPipe,
+    MarketCarComponent,
+    MarketCarAddComponent,
+    MarketComponent
   ],
     imports: [
         BrowserModule,
