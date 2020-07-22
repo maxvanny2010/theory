@@ -2,11 +2,17 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Email</label>
-      <input class="form-control" type="text" formControlName="email">
+      <input type="text" class="form-control" formControlName="email"
+             [class.border-danger]="form.get('email').invalid && form.get('email').touched"
+      >
+      <p *ngIf="form.get('email').invalid && form.get('email').touched">Введите коррекный емаил</p>
     </div>
     <div class="form-group">
       <label>Пароль</label>
-      <input class="form-control" formControlName="pass" type="password">
+      <input type="password" class="form-control" formControlName="pass"
+             [class.border-danger]="form.get('pass').invalid && form.get('pass').touched"
+      >
+      <p *ngIf="this.form.get('pass').invalid && this.form.get('pass').touched">Не должен быть пустым</p>
     </div>
     <div class="form-group">
       <label>Выберите страну</label>
@@ -22,7 +28,7 @@
         {{ans.text}}
       </label>
     </div>
-    <button class="btn btn-success" type="submit">Сохранить</button>
+    <button class="btn btn-success" type="submit" [disabled]="form.invalid">Сохранить</button>
   </form>
 </div>
 

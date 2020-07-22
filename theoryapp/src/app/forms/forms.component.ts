@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-forms',
@@ -7,20 +7,20 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  ngOnInit(): void {
-    this.form = new FormGroup({
-      email: new FormControl(''),
-      pass: new FormControl(''),
-      country: new FormControl('ua'),
-      answer: new FormControl('yes'),
-
-    });
-  }
 
   form: FormGroup;
 
   onSubmit() {
     console.log('Submitted!', this.form);
+  }
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      pass: new FormControl('', Validators.required),
+      country: new FormControl('ua'),
+      answer: new FormControl('yes'),
+
+    });
   }
 
   answers = [{

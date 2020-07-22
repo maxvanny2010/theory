@@ -7,8 +7,7 @@ import {MeComponent} from "./me/me.component";
 import {MiComponent} from './mi/mi.component';
 import {CarsComponent} from './cars/cars.component';
 import {CarComponent} from './car/car.component';
-import {ReactiveFormsModule} from "@angular/forms";
-/*import {FormsModule} from "@angular/forms";*/
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {IfelseComponent} from './ifelse/ifelse.component';
 import {ForComponent} from './for/for.component';
 import {TrucksComponent} from './trucks/trucks.component';
@@ -61,8 +60,8 @@ import {FormsComponent} from './forms/forms.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
-    /*FormsModule*/
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [CarService, ConsoleService],
   bootstrap: [AppComponent]
