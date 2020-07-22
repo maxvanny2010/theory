@@ -7,7 +7,8 @@ import {MeComponent} from "./me/me.component";
 import {MiComponent} from './mi/mi.component';
 import {CarsComponent} from './cars/cars.component';
 import {CarComponent} from './car/car.component';
-import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule} from "@angular/forms";
+/*import {FormsModule} from "@angular/forms";*/
 import {IfelseComponent} from './ifelse/ifelse.component';
 import {ForComponent} from './for/for.component';
 import {TrucksComponent} from './trucks/trucks.component';
@@ -27,8 +28,8 @@ import {MarketCarAddComponent} from './marketcar-add/market-car-add.component';
 import {MarketComponent} from './market/market.component';
 import {CarService} from "./market/car.service";
 import {ConsoleService} from "./market/console.service";
-import { FormComponent } from './form/form.component';
-import { FormsComponent } from './forms/forms.component';
+import {FormComponent} from './form/form.component';
+import {FormsComponent} from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { FormsComponent } from './forms/forms.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    ReactiveFormsModule
+    /*FormsModule*/
   ],
   providers: [CarService, ConsoleService],
   bootstrap: [AppComponent]

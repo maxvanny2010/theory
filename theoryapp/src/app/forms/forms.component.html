@@ -1,16 +1,16 @@
 <div class="col-xs-8 col-xs-offset-2">
-  <form #form="ngForm" (ngSubmit)="submitForm(form)">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Email</label>
-      <input class="form-control" name="email" ngModel type="text">
+      <input class="form-control" type="text" formControlName="email">
     </div>
     <div class="form-group">
       <label>Пароль</label>
-      <input class="form-control" name="pass" ngModel type="password">
+      <input class="form-control" formControlName="pass" type="password">
     </div>
     <div class="form-group">
       <label>Выберите страну</label>
-      <select class="form-control" name="country" ngModel>
+      <select class="form-control" formControlName="country">
         <option value="ru">Россия</option>
         <option value="by">Белоруссия</option>
         <option value="ua">Украина</option>
@@ -18,7 +18,7 @@
     </div>
     <div *ngFor="let ans of answers" class="radio">
       <label>
-        <input [value]="ans.type" name="answer" ngModel type="radio">
+        <input [value]="ans.type" formControlName="answer" type="radio">
         {{ans.text}}
       </label>
     </div>
