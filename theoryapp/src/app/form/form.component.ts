@@ -10,6 +10,8 @@ import {NgForm} from "@angular/forms";
   }`]
 })
 export class FormComponent {
+  defaultCountry = 'ua';
+  defaultAnswer = 'yes';
   answers = [{
     type: 'yes',
     text: 'ДА'
