@@ -27,6 +27,8 @@ import {MarketCarAddComponent} from './marketcar-add/market-car-add.component';
 import {MarketComponent} from './market/market.component';
 import {CarService} from "./market/car.service";
 import {ConsoleService} from "./market/console.service";
+import { FormComponent } from './form/form.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import {ConsoleService} from "./market/console.service";
     DynamicFilterPipe,
     MarketCarComponent,
     MarketCarAddComponent,
-    MarketComponent
+    MarketComponent,
+    FormComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
