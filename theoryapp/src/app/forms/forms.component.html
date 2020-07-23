@@ -6,14 +6,19 @@
         <input type="text" class="form-control" formControlName="email"
                [class.border-danger]="form.get('user.email').invalid && form.get('user.email').touched"
         >
-        <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">Введите коррекный емаил</p>
+        <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">Введите корректный емаил</p>
       </div>
       <div class="form-group">
         <label>Пароль</label>
         <input type="password" class="form-control" formControlName="pass"
                [class.border-danger]="form.get('user.pass').invalid && form.get('user.pass').touched"
         >
-        <p *ngIf="this.form.get('user.pass').invalid && this.form.get('user.pass').touched">Не должен быть пустым</p>
+        <div *ngIf="this.form.get('user.pass').invalid && this.form.get('user.pass').touched">
+          <div *ngIf="this.form.get('user.pass').errors['required']">Не должен быть пустым!</div>
+          <div *ngIf="this.form.get('user.pass').errors['lengthError']">Не должен быть меньше {{charsCount}}
+            х символов!
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group">

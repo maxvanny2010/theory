@@ -18,12 +18,18 @@ export class FormsComponent implements OnInit {
     this.form = new FormGroup({
       user: new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email]),
-        pass: new FormControl('', Validators.required),
+        pass: new FormControl('', [Validators.required, this.checkForLength.bind(this)]),
       }),
       country: new FormControl('ua'),
       answer: new FormControl('yes'),
 
     });
+  }
+
+  charsCount = 5;
+
+  checkForLength(control: FormControl) {
+    return control.value.length <= this.charsCount ? {'lengthError': true} : null;
   }
 
   answers = [{
