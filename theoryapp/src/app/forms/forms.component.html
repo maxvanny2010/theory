@@ -1,18 +1,20 @@
 <div class="col-xs-8 col-xs-offset-2">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Email</label>
-      <input type="text" class="form-control" formControlName="email"
-             [class.border-danger]="form.get('email').invalid && form.get('email').touched"
-      >
-      <p *ngIf="form.get('email').invalid && form.get('email').touched">Введите коррекный емаил</p>
-    </div>
-    <div class="form-group">
-      <label>Пароль</label>
-      <input type="password" class="form-control" formControlName="pass"
-             [class.border-danger]="form.get('pass').invalid && form.get('pass').touched"
-      >
-      <p *ngIf="this.form.get('pass').invalid && this.form.get('pass').touched">Не должен быть пустым</p>
+    <div formGroupName="user">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email"
+               [class.border-danger]="form.get('user.email').invalid && form.get('user.email').touched"
+        >
+        <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">Введите коррекный емаил</p>
+      </div>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input type="password" class="form-control" formControlName="pass"
+               [class.border-danger]="form.get('user.pass').invalid && form.get('user.pass').touched"
+        >
+        <p *ngIf="this.form.get('user.pass').invalid && this.form.get('user.pass').touched">Не должен быть пустым</p>
+      </div>
     </div>
     <div class="form-group">
       <label>Выберите страну</label>
