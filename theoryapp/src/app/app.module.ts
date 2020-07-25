@@ -1,5 +1,6 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -29,6 +30,8 @@ import {CarService} from "./market/car.service";
 import {ConsoleService} from "./market/console.service";
 import {FormComponent} from './form/form.component';
 import {FormsComponent} from './forms/forms.component';
+import {ServerComponent} from './server/server.component';
+import {CarsService} from "./server/cars.service";
 
 @NgModule({
   declarations: [
@@ -55,15 +58,17 @@ import {FormsComponent} from './forms/forms.component';
     MarketCarAddComponent,
     MarketComponent,
     FormComponent,
-    FormsComponent
+    FormsComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [CarService, ConsoleService],
+  providers: [CarService, ConsoleService, CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,24 @@
+{
+  "cars": [
+    {
+      "name": "BMW",
+      "color": "blue",
+      "id": 1
+    },
+    {
+      "name": "Jeep",
+      "color": "green",
+      "id": 2
+    },
+    {
+      "name": "Audi",
+      "color": "red",
+      "id": 3
+    },
+    {
+      "name": "Bentley",
+      "color": "blue",
+      "id": 4
+    }
+  ]
+}
