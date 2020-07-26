@@ -41,6 +41,14 @@ export class ServerComponent {
 
   setNewColor(car: Cars) {
     this.carsService.changeColor(car, this.getRandomColor())
-      .subscribe((data) => { console.log(data); });
+      .subscribe((data) => {
+        console.log(data);
+      });
+  }
+
+  deleteCar(car: Cars) {
+    this.carsService.deleteCar(car).subscribe(data => {
+      this.cars = this.cars.filter(cr => cr.id !== car.id);
+    });
   }
 }

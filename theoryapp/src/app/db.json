@@ -14,11 +14,6 @@
       "name": "Audi",
       "color": "red",
       "id": 3
-    },
-    {
-      "name": "Bentley",
-      "color": "blue",
-      "id": 4
     }
   ]
 }

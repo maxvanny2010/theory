@@ -1,14 +1,19 @@
 <div class="container">
-  <div class="col-xl-8 col-offset-2">
-    <input type="text" class="form-control" [(ngModel)]="carName">
-    <hr/>
-    <button class="btn btn-primary" (click)="getGETCars()">Загрузить машину</button>
-    <button class="btn btn-success" (click)="addPOSTCar()">Добавить машину</button>
-    <hr/>
+  <div class="row">
+    <div class="сol-sm-6">
+      <input type="text" class="form-control" [(ngModel)]="carName">
+      <hr/>
+      <button class="btn btn-primary" (click)="getGETCars()">Загрузить машину</button>
+      <button class="btn btn-success" (click)="addPOSTCar()">Добавить машину</button>
+      <hr/>
+    </div>
+  </div>
+  <div class="row">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let car of cars">
         {{car.name}}
         <button class="btn btn-sm btn-info" (click)="setNewColor(car)">Изменить цвет</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteCar(car)">Удалить машину</button>
         <span class="badge" [ngStyle]="{background: car.color, color: 'white'}">
           {{car.id}}
         </span>
