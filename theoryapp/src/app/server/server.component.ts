@@ -22,7 +22,10 @@ export class ServerComponent {
   }
 
   getGETCars() {
-    return this.carsService.getCarsByGET().subscribe((cars: Cars[]) => this.cars = cars);
+    return this.carsService.getCarsByGET().subscribe(
+      (cars: Cars[]) => {
+        this.cars = cars
+      }, error => alert(error));
   }
 
   addPOSTCar() {

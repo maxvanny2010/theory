@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable()
 export class CarsService {
@@ -8,8 +9,11 @@ export class CarsService {
   }
 
   getCarsByGET() {
-    const headers: HttpHeaders  = new HttpHeaders ({'Content-Type': 'application/json; charset=utf8'});
-    return this.http.get('http://localhost:3000/cars', {headers});
+    const headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json; charset=utf8'});
+    return this.http.get('http://localhost:3100/cars', {headers})
+      .catch(error => {
+        return Observable.throwError("Сервер недоступен. Попробуйте позже.")
+      });
   }
 
   addCarByPOST(carName: string) {
@@ -17,7 +21,7 @@ export class CarsService {
       name: carName,
       color: 'blue'
     }
-    const headers = new HttpHeaders ({'Content-Type': 'application/json; charset=utf8'});
+    const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf8'});
     return this.http.post('http://localhost:3000/cars', data, {headers});
   }
 
