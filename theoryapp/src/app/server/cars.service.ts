@@ -10,7 +10,7 @@ export class CarsService {
 
   getCarsByGET() {
     const headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json; charset=utf8'});
-    return this.http.get('http://localhost:3100/cars', {headers})
+    return this.http.get('http://localhost:3000/cars', {headers})
       .catch(error => {
         return Observable.throwError("Сервер недоступен. Попробуйте позже.")
       });
@@ -32,5 +32,11 @@ export class CarsService {
 
   deleteCar(car: any) {
     return this.http.delete(`http://localhost:3000/cars/${car.id}`);
+  }
+
+  getAppTitle() {
+    return this.http.get('http://localhost:3000/title')
+      .delay(3000)
+      .map(data=> data["value"]);
   }
 }
