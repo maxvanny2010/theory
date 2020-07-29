@@ -38,7 +38,9 @@ import {RouterBasePageComponent} from './router-base-page/router-base-page.compo
 import {RoutersService} from "./routers/routers.service";
 import {RoutersComponent} from './routers/routers.component';
 import {RoutPageComponent} from './rout-page/rout-page.component';
-import { RoutPageNotFoundComponent } from './rout-page-not-found/rout-page-not-found.component';
+import {RoutPageNotFoundComponent} from './rout-page-not-found/rout-page-not-found.component';
+import {AuthService} from "./routers/auth.service";
+import {AuthGuard} from "./routers/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -80,7 +82,7 @@ import { RoutPageNotFoundComponent } from './rout-page-not-found/rout-page-not-f
     FormsModule,
     HttpClientModule
   ],
-  providers: [CarService, ConsoleService, CarsService, RoutersService],
+  providers: [CarService, ConsoleService, CarsService, RoutersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

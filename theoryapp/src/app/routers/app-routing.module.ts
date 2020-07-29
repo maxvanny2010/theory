@@ -4,10 +4,11 @@ import {RouterPageComponent} from "../router-page/router-page.component";
 import {RouterBasePageComponent} from "../router-base-page/router-base-page.component";
 import {RoutPageComponent} from "../rout-page/rout-page.component";
 import {RoutPageNotFoundComponent} from "../rout-page-not-found/rout-page-not-found.component";
+import {AuthGuard} from "./auth-guard.service";
 
 const appRoutes: Routes = [
   {
-    path: 'cars', component: RouterPageComponent, children: [
+    path: 'cars', component: RouterPageComponent, canActivate: [AuthGuard], children: [
       {path: ':id/:name', component: RoutPageComponent}
     ]
   },

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {AuthService} from "../routers/auth.service";
 
 @Component({
   selector: 'app-router-base-page',
@@ -7,7 +8,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class RouterBasePageComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -19,5 +20,9 @@ export class RouterBasePageComponent implements OnInit {
 
   openRelativeRouterPage() {
     this.router.navigate(['cars'], {relativeTo: this.route});
+  }
+
+  changeAuthStatus(status: string) {
+    status === 'login' ? this.auth.logIn() : this.auth.logOut();
   }
 }
