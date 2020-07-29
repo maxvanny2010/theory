@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
 
-import {AppRoutingModule} from './app-routing.module';
+
+import {AppRoutingModule} from './routers/app-routing.module';
 import {AppComponent} from './app.component';
 import {MeComponent} from "./me/me.component";
 import {MiComponent} from './mi/mi.component';
@@ -32,6 +33,11 @@ import {FormComponent} from './form/form.component';
 import {FormsComponent} from './forms/forms.component';
 import {ServerComponent} from './server/server.component';
 import {CarsService} from "./server/cars.service";
+import {RouterPageComponent} from './router-page/router-page.component';
+import {RouterBasePageComponent} from './router-base-page/router-base-page.component';
+import {RoutersService} from "./routers/routers.service";
+import {RoutersComponent} from './routers/routers.component';
+import {RoutPageComponent} from './rout-page/rout-page.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +65,11 @@ import {CarsService} from "./server/cars.service";
     MarketComponent,
     FormComponent,
     FormsComponent,
-    ServerComponent
+    ServerComponent,
+    RouterPageComponent,
+    RouterBasePageComponent,
+    RoutersComponent,
+    RoutPageComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +78,7 @@ import {CarsService} from "./server/cars.service";
     FormsModule,
     HttpClientModule
   ],
-  providers: [CarService, ConsoleService, CarsService],
+  providers: [CarService, ConsoleService, CarsService, RoutersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

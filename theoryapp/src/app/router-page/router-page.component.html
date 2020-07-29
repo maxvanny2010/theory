@@ -1,0 +1,11 @@
+<a routerLink="/cars">Обновить страницу</a>
+<h2>Страница машин</h2>
+<hr/>
+<ul class="list-group">
+  <li *ngFor="let car of cars" class="list-group-item">
+    <a [queryParams]="{year: car.year, color: car.color}"
+       [routerLink]="['/cars', car.id, car.name]"
+       fragment="pic"
+    >{{car.name}}</a>
+  </li>
+</ul>
