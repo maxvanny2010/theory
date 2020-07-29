@@ -5,8 +5,12 @@ import {RouterBasePageComponent} from "../router-base-page/router-base-page.comp
 import {RoutPageComponent} from "../rout-page/rout-page.component";
 
 const appRoutes: Routes = [
-  {path: 'cars', component: RouterPageComponent},
-  {path: 'cars/:id/:name', component: RoutPageComponent},
+  {
+    path: 'cars', component: RouterPageComponent, children: [
+      {path: ':id/:name', component: RoutPageComponent}
+    ]
+  },
+  // {path: 'cars/:id/:name', component: RoutPageComponent},
   {path: '', component: RouterBasePageComponent},
 ];
 
