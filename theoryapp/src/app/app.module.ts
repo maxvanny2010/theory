@@ -38,6 +38,7 @@ import {RouterBasePageComponent} from './router-base-page/router-base-page.compo
 import {RoutersService} from "./routers/routers.service";
 import {RoutersComponent} from './routers/routers.component';
 import {RoutPageComponent} from './rout-page/rout-page.component';
+import { RoutPageNotFoundComponent } from './rout-page-not-found/rout-page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import {RoutPageComponent} from './rout-page/rout-page.component';
     RouterPageComponent,
     RouterBasePageComponent,
     RoutersComponent,
-    RoutPageComponent
+    RoutPageComponent,
+    RoutPageNotFoundComponent
   ],
   imports: [
     BrowserModule,
